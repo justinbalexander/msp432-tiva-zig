@@ -17,6 +17,10 @@ s/^#define\s\+\([a-zA-Z0-9_]\+\)\s\+\([a-zA-Z0-9_]\+\)\(.*\)/pub const \1 = usiz
 
 # Get single address register definitions, discernable by definition as dereferenced pointer
 s/^#define\s\+\([a-zA-Z0-9_]\+\)\s\+(\*((volatile uint32_t\s*\*)\(0x[0-9A-Fa-f]\+\)))\(.*\)/pub const \1 = @intToPtr(*volatile u32, \2);\3/
+s/^#define\s\+\([a-zA-Z0-9_]\+\)\s\+(\*((volatile uint16_t\s*\*)\(0x[0-9A-Fa-f]\+\)))\(.*\)/pub const \1 = @intToPtr(*volatile u16, \2);\3/
+s/^#define\s\+\([a-zA-Z0-9_]\+\)\s\+(\*((volatile uint8_t\s*\*)\(0x[0-9A-Fa-f]\+\)))\(.*\)/pub const \1 = @intToPtr(*volatile u8, \2);\3/
 
 # Get multiple address spanning registers, discernable by definition as un-dereferenced pointer
 s/^#define\s\+\([a-zA-Z0-9_]\+\)\s\+((volatile uint32_t\s*\*)\(0x[0-9A-Fa-f]\+\))\(.*\)/pub const \1 = @intToPtr([*]volatile u32, \2);\3/
+s/^#define\s\+\([a-zA-Z0-9_]\+\)\s\+((volatile uint16_t\s*\*)\(0x[0-9A-Fa-f]\+\))\(.*\)/pub const \1 = @intToPtr([*]volatile u16, \2);\3/
+s/^#define\s\+\([a-zA-Z0-9_]\+\)\s\+((volatile uint8_t\s*\*)\(0x[0-9A-Fa-f]\+\))\(.*\)/pub const \1 = @intToPtr([*]volatile u8, \2);\3/
