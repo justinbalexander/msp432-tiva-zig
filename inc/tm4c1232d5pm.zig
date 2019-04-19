@@ -1326,17 +1326,17 @@ pub const WTIMER5_PP_R = @intToPtr(*volatile u32, 0x4004FFC0);
 // Univeral Serial Bus registers (USB0)
 //
 //*****************************************************************************
-#define USB0_FADDR_R            (*((volatile uint8_t *)0x40050000))
-#define USB0_POWER_R            (*((volatile uint8_t *)0x40050001))
-#define USB0_TXIS_R             (*((volatile uint16_t *)0x40050002))
-#define USB0_RXIS_R             (*((volatile uint16_t *)0x40050004))
-#define USB0_TXIE_R             (*((volatile uint16_t *)0x40050006))
-#define USB0_RXIE_R             (*((volatile uint16_t *)0x40050008))
-#define USB0_IS_R               (*((volatile uint8_t *)0x4005000A))
-#define USB0_IE_R               (*((volatile uint8_t *)0x4005000B))
-#define USB0_FRAME_R            (*((volatile uint16_t *)0x4005000C))
-#define USB0_EPIDX_R            (*((volatile uint8_t *)0x4005000E))
-#define USB0_TEST_R             (*((volatile uint8_t *)0x4005000F))
+pub const USB0_FADDR_R = @intToPtr(*volatile u8, 0x40050000);
+pub const USB0_POWER_R = @intToPtr(*volatile u8, 0x40050001);
+pub const USB0_TXIS_R = @intToPtr(*volatile u16, 0x40050002);
+pub const USB0_RXIS_R = @intToPtr(*volatile u16, 0x40050004);
+pub const USB0_TXIE_R = @intToPtr(*volatile u16, 0x40050006);
+pub const USB0_RXIE_R = @intToPtr(*volatile u16, 0x40050008);
+pub const USB0_IS_R = @intToPtr(*volatile u8, 0x4005000A);
+pub const USB0_IE_R = @intToPtr(*volatile u8, 0x4005000B);
+pub const USB0_FRAME_R = @intToPtr(*volatile u16, 0x4005000C);
+pub const USB0_EPIDX_R = @intToPtr(*volatile u8, 0x4005000E);
+pub const USB0_TEST_R = @intToPtr(*volatile u8, 0x4005000F);
 pub const USB0_FIFO0_R = @intToPtr(*volatile u32, 0x40050020);
 pub const USB0_FIFO1_R = @intToPtr(*volatile u32, 0x40050024);
 pub const USB0_FIFO2_R = @intToPtr(*volatile u32, 0x40050028);
@@ -1345,67 +1345,67 @@ pub const USB0_FIFO4_R = @intToPtr(*volatile u32, 0x40050030);
 pub const USB0_FIFO5_R = @intToPtr(*volatile u32, 0x40050034);
 pub const USB0_FIFO6_R = @intToPtr(*volatile u32, 0x40050038);
 pub const USB0_FIFO7_R = @intToPtr(*volatile u32, 0x4005003C);
-#define USB0_TXFIFOSZ_R         (*((volatile uint8_t *)0x40050062))
-#define USB0_RXFIFOSZ_R         (*((volatile uint8_t *)0x40050063))
-#define USB0_TXFIFOADD_R        (*((volatile uint16_t *)0x40050064))
-#define USB0_RXFIFOADD_R        (*((volatile uint16_t *)0x40050066))
-#define USB0_CONTIM_R           (*((volatile uint8_t *)0x4005007A))
-#define USB0_FSEOF_R            (*((volatile uint8_t *)0x4005007D))
-#define USB0_LSEOF_R            (*((volatile uint8_t *)0x4005007E))
-#define USB0_CSRL0_R            (*((volatile uint8_t *)0x40050102))
-#define USB0_CSRH0_R            (*((volatile uint8_t *)0x40050103))
-#define USB0_COUNT0_R           (*((volatile uint8_t *)0x40050108))
-#define USB0_TXMAXP1_R          (*((volatile uint16_t *)0x40050110))
-#define USB0_TXCSRL1_R          (*((volatile uint8_t *)0x40050112))
-#define USB0_TXCSRH1_R          (*((volatile uint8_t *)0x40050113))
-#define USB0_RXMAXP1_R          (*((volatile uint16_t *)0x40050114))
-#define USB0_RXCSRL1_R          (*((volatile uint8_t *)0x40050116))
-#define USB0_RXCSRH1_R          (*((volatile uint8_t *)0x40050117))
-#define USB0_RXCOUNT1_R         (*((volatile uint16_t *)0x40050118))
-#define USB0_TXMAXP2_R          (*((volatile uint16_t *)0x40050120))
-#define USB0_TXCSRL2_R          (*((volatile uint8_t *)0x40050122))
-#define USB0_TXCSRH2_R          (*((volatile uint8_t *)0x40050123))
-#define USB0_RXMAXP2_R          (*((volatile uint16_t *)0x40050124))
-#define USB0_RXCSRL2_R          (*((volatile uint8_t *)0x40050126))
-#define USB0_RXCSRH2_R          (*((volatile uint8_t *)0x40050127))
-#define USB0_RXCOUNT2_R         (*((volatile uint16_t *)0x40050128))
-#define USB0_TXMAXP3_R          (*((volatile uint16_t *)0x40050130))
-#define USB0_TXCSRL3_R          (*((volatile uint8_t *)0x40050132))
-#define USB0_TXCSRH3_R          (*((volatile uint8_t *)0x40050133))
-#define USB0_RXMAXP3_R          (*((volatile uint16_t *)0x40050134))
-#define USB0_RXCSRL3_R          (*((volatile uint8_t *)0x40050136))
-#define USB0_RXCSRH3_R          (*((volatile uint8_t *)0x40050137))
-#define USB0_RXCOUNT3_R         (*((volatile uint16_t *)0x40050138))
-#define USB0_TXMAXP4_R          (*((volatile uint16_t *)0x40050140))
-#define USB0_TXCSRL4_R          (*((volatile uint8_t *)0x40050142))
-#define USB0_TXCSRH4_R          (*((volatile uint8_t *)0x40050143))
-#define USB0_RXMAXP4_R          (*((volatile uint16_t *)0x40050144))
-#define USB0_RXCSRL4_R          (*((volatile uint8_t *)0x40050146))
-#define USB0_RXCSRH4_R          (*((volatile uint8_t *)0x40050147))
-#define USB0_RXCOUNT4_R         (*((volatile uint16_t *)0x40050148))
-#define USB0_TXMAXP5_R          (*((volatile uint16_t *)0x40050150))
-#define USB0_TXCSRL5_R          (*((volatile uint8_t *)0x40050152))
-#define USB0_TXCSRH5_R          (*((volatile uint8_t *)0x40050153))
-#define USB0_RXMAXP5_R          (*((volatile uint16_t *)0x40050154))
-#define USB0_RXCSRL5_R          (*((volatile uint8_t *)0x40050156))
-#define USB0_RXCSRH5_R          (*((volatile uint8_t *)0x40050157))
-#define USB0_RXCOUNT5_R         (*((volatile uint16_t *)0x40050158))
-#define USB0_TXMAXP6_R          (*((volatile uint16_t *)0x40050160))
-#define USB0_TXCSRL6_R          (*((volatile uint8_t *)0x40050162))
-#define USB0_TXCSRH6_R          (*((volatile uint8_t *)0x40050163))
-#define USB0_RXMAXP6_R          (*((volatile uint16_t *)0x40050164))
-#define USB0_RXCSRL6_R          (*((volatile uint8_t *)0x40050166))
-#define USB0_RXCSRH6_R          (*((volatile uint8_t *)0x40050167))
-#define USB0_RXCOUNT6_R         (*((volatile uint16_t *)0x40050168))
-#define USB0_TXMAXP7_R          (*((volatile uint16_t *)0x40050170))
-#define USB0_TXCSRL7_R          (*((volatile uint8_t *)0x40050172))
-#define USB0_TXCSRH7_R          (*((volatile uint8_t *)0x40050173))
-#define USB0_RXMAXP7_R          (*((volatile uint16_t *)0x40050174))
-#define USB0_RXCSRL7_R          (*((volatile uint8_t *)0x40050176))
-#define USB0_RXCSRH7_R          (*((volatile uint8_t *)0x40050177))
-#define USB0_RXCOUNT7_R         (*((volatile uint16_t *)0x40050178))
-#define USB0_RXDPKTBUFDIS_R     (*((volatile uint16_t *)0x40050340))
-#define USB0_TXDPKTBUFDIS_R     (*((volatile uint16_t *)0x40050342))
+pub const USB0_TXFIFOSZ_R = @intToPtr(*volatile u8, 0x40050062);
+pub const USB0_RXFIFOSZ_R = @intToPtr(*volatile u8, 0x40050063);
+pub const USB0_TXFIFOADD_R = @intToPtr(*volatile u16, 0x40050064);
+pub const USB0_RXFIFOADD_R = @intToPtr(*volatile u16, 0x40050066);
+pub const USB0_CONTIM_R = @intToPtr(*volatile u8, 0x4005007A);
+pub const USB0_FSEOF_R = @intToPtr(*volatile u8, 0x4005007D);
+pub const USB0_LSEOF_R = @intToPtr(*volatile u8, 0x4005007E);
+pub const USB0_CSRL0_R = @intToPtr(*volatile u8, 0x40050102);
+pub const USB0_CSRH0_R = @intToPtr(*volatile u8, 0x40050103);
+pub const USB0_COUNT0_R = @intToPtr(*volatile u8, 0x40050108);
+pub const USB0_TXMAXP1_R = @intToPtr(*volatile u16, 0x40050110);
+pub const USB0_TXCSRL1_R = @intToPtr(*volatile u8, 0x40050112);
+pub const USB0_TXCSRH1_R = @intToPtr(*volatile u8, 0x40050113);
+pub const USB0_RXMAXP1_R = @intToPtr(*volatile u16, 0x40050114);
+pub const USB0_RXCSRL1_R = @intToPtr(*volatile u8, 0x40050116);
+pub const USB0_RXCSRH1_R = @intToPtr(*volatile u8, 0x40050117);
+pub const USB0_RXCOUNT1_R = @intToPtr(*volatile u16, 0x40050118);
+pub const USB0_TXMAXP2_R = @intToPtr(*volatile u16, 0x40050120);
+pub const USB0_TXCSRL2_R = @intToPtr(*volatile u8, 0x40050122);
+pub const USB0_TXCSRH2_R = @intToPtr(*volatile u8, 0x40050123);
+pub const USB0_RXMAXP2_R = @intToPtr(*volatile u16, 0x40050124);
+pub const USB0_RXCSRL2_R = @intToPtr(*volatile u8, 0x40050126);
+pub const USB0_RXCSRH2_R = @intToPtr(*volatile u8, 0x40050127);
+pub const USB0_RXCOUNT2_R = @intToPtr(*volatile u16, 0x40050128);
+pub const USB0_TXMAXP3_R = @intToPtr(*volatile u16, 0x40050130);
+pub const USB0_TXCSRL3_R = @intToPtr(*volatile u8, 0x40050132);
+pub const USB0_TXCSRH3_R = @intToPtr(*volatile u8, 0x40050133);
+pub const USB0_RXMAXP3_R = @intToPtr(*volatile u16, 0x40050134);
+pub const USB0_RXCSRL3_R = @intToPtr(*volatile u8, 0x40050136);
+pub const USB0_RXCSRH3_R = @intToPtr(*volatile u8, 0x40050137);
+pub const USB0_RXCOUNT3_R = @intToPtr(*volatile u16, 0x40050138);
+pub const USB0_TXMAXP4_R = @intToPtr(*volatile u16, 0x40050140);
+pub const USB0_TXCSRL4_R = @intToPtr(*volatile u8, 0x40050142);
+pub const USB0_TXCSRH4_R = @intToPtr(*volatile u8, 0x40050143);
+pub const USB0_RXMAXP4_R = @intToPtr(*volatile u16, 0x40050144);
+pub const USB0_RXCSRL4_R = @intToPtr(*volatile u8, 0x40050146);
+pub const USB0_RXCSRH4_R = @intToPtr(*volatile u8, 0x40050147);
+pub const USB0_RXCOUNT4_R = @intToPtr(*volatile u16, 0x40050148);
+pub const USB0_TXMAXP5_R = @intToPtr(*volatile u16, 0x40050150);
+pub const USB0_TXCSRL5_R = @intToPtr(*volatile u8, 0x40050152);
+pub const USB0_TXCSRH5_R = @intToPtr(*volatile u8, 0x40050153);
+pub const USB0_RXMAXP5_R = @intToPtr(*volatile u16, 0x40050154);
+pub const USB0_RXCSRL5_R = @intToPtr(*volatile u8, 0x40050156);
+pub const USB0_RXCSRH5_R = @intToPtr(*volatile u8, 0x40050157);
+pub const USB0_RXCOUNT5_R = @intToPtr(*volatile u16, 0x40050158);
+pub const USB0_TXMAXP6_R = @intToPtr(*volatile u16, 0x40050160);
+pub const USB0_TXCSRL6_R = @intToPtr(*volatile u8, 0x40050162);
+pub const USB0_TXCSRH6_R = @intToPtr(*volatile u8, 0x40050163);
+pub const USB0_RXMAXP6_R = @intToPtr(*volatile u16, 0x40050164);
+pub const USB0_RXCSRL6_R = @intToPtr(*volatile u8, 0x40050166);
+pub const USB0_RXCSRH6_R = @intToPtr(*volatile u8, 0x40050167);
+pub const USB0_RXCOUNT6_R = @intToPtr(*volatile u16, 0x40050168);
+pub const USB0_TXMAXP7_R = @intToPtr(*volatile u16, 0x40050170);
+pub const USB0_TXCSRL7_R = @intToPtr(*volatile u8, 0x40050172);
+pub const USB0_TXCSRH7_R = @intToPtr(*volatile u8, 0x40050173);
+pub const USB0_RXMAXP7_R = @intToPtr(*volatile u16, 0x40050174);
+pub const USB0_RXCSRL7_R = @intToPtr(*volatile u8, 0x40050176);
+pub const USB0_RXCSRH7_R = @intToPtr(*volatile u8, 0x40050177);
+pub const USB0_RXCOUNT7_R = @intToPtr(*volatile u16, 0x40050178);
+pub const USB0_RXDPKTBUFDIS_R = @intToPtr(*volatile u16, 0x40050340);
+pub const USB0_TXDPKTBUFDIS_R = @intToPtr(*volatile u16, 0x40050342);
 pub const USB0_DRRIS_R = @intToPtr(*volatile u32, 0x40050410);
 pub const USB0_DRIM_R = @intToPtr(*volatile u32, 0x40050414);
 pub const USB0_DRISC_R = @intToPtr(*volatile u32, 0x40050418);
