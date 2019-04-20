@@ -1,5 +1,6 @@
 const std = @import("std");
 const builtin = @import("builtin");
+use @import("mcu_hw");
 
 const main = @import("main.zig").main;
 //TODO see first isrVector
@@ -187,7 +188,9 @@ extern nakedcc fn resetISR() noreturn {
     const bss_slice = @ptrCast([*]u8, &_bss)[0 .. @ptrToInt(&_ebss) - @ptrToInt(&_bss)];
     std.mem.set(u8, bss_slice, 0);
 
-    // TODO: enable FPU so that main prologue saving fpu registers doesn't cause fault
+    NVIC_CPAC_R.* = ((NVIC_CPAC_R.* &
+        ~(NVIC.CPAC.CP10_M | NVIC.CPAC.CP11_M)) |
+        NVIC.CPAC.CP10_FULL | NVIC.CPAC.CP11_FULL);
 
     main();
 }
