@@ -5,6 +5,12 @@
 // work-around:
 pub use @import("tm4c123gh6pm" ++ ".zig");
 
+comptime {
+    // Allows discovery of files to be included in build
+    // TODO: make startup file for tm4c129 parts and others
+    _ = @import("startup_tm4c123.zig");
+}
+
 pub const ADC = @import("hw_adc.zig");
 pub const AES = @import("hw_aes.zig");
 pub const CAN = @import("hw_can.zig");

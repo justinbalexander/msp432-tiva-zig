@@ -1,8 +1,9 @@
 const std = @import("std");
 const builtin = @import("builtin");
-use @import("mcu_hw");
+use @import("mcu_hw.zig");
 
-const main = @import("main.zig").main;
+extern fn main() noreturn;
+
 //TODO see first isrVector
 //export var systemStack: [64]u32 = undefined;
 
